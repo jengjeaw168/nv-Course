@@ -10,61 +10,86 @@ import BlogCreate from '../components/Blogs/CreateBlog.vue'
 import BlogEdit from '../components/Blogs/EditBlog.vue'
 import BlogShow from '../components/Blogs/ShowBlog.vue'
 
+import BookList from '../views/BookList.vue'
+import BookForm from '../views/BookForm.vue'
+import BookDetail from '../views/BookDetail.vue'
+
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: () => import('../views/HomeView.vue'),
-    },
-    {
-      path: '/users',
-      name: 'users',
-      component: UserIndex
-    },
-    {
-      path: '/user/create',
-      name: 'users-create',
-      component: UserCreate
-    },
-    {
-      path: '/user/edit/:userId',
-      name: 'user-edit',
-      component: UserEdit
-    },
-    {
-      path: '/user/:userId',
-      name: 'user',
-      component: UserShow
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: Login
-    },
-    {
-      path: '/blogs',
-      name: 'blogs',
-      component: BlogIndex
-    },
-    {
-      path: '/blog/create',
-      name: 'blogs-create',
-      component: BlogCreate
-    },
-    {
-      path: '/blog/edit/:blogId',
-      name: 'blog-edit',
-      component: BlogEdit
-    },
-    {
-      path: '/blog/:blogId',
-      name: 'blog',
-      component: BlogShow
-    },
-  ]
+    history: createWebHistory(
+        import.meta.env.BASE_URL),
+    routes: [{
+            path: '/',
+            name: 'home',
+            component: () =>
+                import ('../views/HomeView.vue'),
+        },
+        {
+            path: '/users',
+            name: 'users',
+            component: UserIndex
+        },
+        {
+            path: '/user/create',
+            name: 'users-create',
+            component: UserCreate
+        },
+        {
+            path: '/user/edit/:userId',
+            name: 'user-edit',
+            component: UserEdit
+        },
+        {
+            path: '/user/:userId',
+            name: 'user',
+            component: UserShow
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: Login
+        },
+        {
+            path: '/blogs',
+            name: 'blogs',
+            component: BlogIndex
+        },
+        {
+            path: '/blog/create',
+            name: 'blogs-create',
+            component: BlogCreate
+        },
+        {
+            path: '/blog/edit/:blogId',
+            name: 'blog-edit',
+            component: BlogEdit
+        },
+        {
+            path: '/blog/:blogId',
+            name: 'blog',
+            component: BlogShow
+        },
+        {
+            path: '/books',
+            name: 'BookList',
+            component: BookList
+        },
+        {
+            path: '/books/create',
+            name: 'BookCreate',
+            component: BookForm
+        },
+        {
+            path: '/books/edit/:id',
+            name: 'BookEdit',
+            component: BookForm
+        },
+        {
+            path: '/books/:id',
+            name: 'BookDetail',
+            component: BookDetail
+        }
+    ]
 })
 
 export default router
